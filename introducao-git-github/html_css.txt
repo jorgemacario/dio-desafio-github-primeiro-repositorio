@@ -1,0 +1,200 @@
+[ORIGAMID - FRONT END]     https://baixatorrent.com/ cibstelacao
+
+PRO ATIVA - SISTEMAS INTELIGENTES
+
+*** [HTML] ***
+
+[Atalhos]
+
+CTRL+D - seleciona palavras idênticas para alteração múltipla.
+ALT+SETA PRA CIMA/BAIXO - sobe ou desce uma linha.
+COMENTÁRIO - <!-- comentario --> (ou CTRL+;    /-no teclado PC)
+CTRL+B - Oculta o explorer dos arquivos expandindo a tela.
+
+
+*** [CSS] ***
+
+h1, a {
+   color="red"	
+}
+** Todas as tags 'h1' e 'a' terão cor red.
+---------------------------------------------------------------------------------
+p a { 
+    color: green;
+}
+** Este tipo de seletor seleciona apenas as tags 'a' que tem 'p' como parente.
+Ex.: <p><a href="/link.html">LINK</a></p> - o estilo será aplicado apenas no 'a'.
+----------------------------------------------------------------------------------
+[SELETORES ID e CLASS]
+
+Classe pode ser utilizada em vários elementos. O ID também, mas é recomendado utilizá-lo
+de forma singular para cada elemento, pois ele pode ser utilizado por tencologias como javascript
+para manipular atributos de um objeto específico.
+
+[ID]
+<h1 id="logo">Bem-vindo<h1>
+
+#logo {
+   color="blue";
+}
+
+[CLASS]
+<h1 class="logo">Bem-vindo<h1>
+
+.logo {
+   color="green";
+}
+Outra forma:
+Para
+.codigo .design {
+	color: red;
+}
+** Este tipo de seletor seleciona apenas as tags 'a' que tem 'p' como parente. EX.:
+
+<body class="codigo">
+  <a class="design" href="/link.html">LINK1</a>
+  <a class="design" href="/link.html">LINK2</a>
+  <a class="design" href="/link.html">LINK3</a>
+</body>
+** SOMENTE AS TAGS CONTENDO A CLASSE 'DESIGN' SERÃO ALTERADAS PORQUE ESTÃO DENTRO DO BODY QUE TEM A CLASSE (PARENTE) 'CÓDIGO'.
+--------------------------------------------------------------------
+[DIV]
+
+div {
+padding: 20px 40px;
+margin: 30px 100px 60px 200px; (sentido horário: top-right-bottom-left.
+}
+
+div {
+padding: top/bottom right/left;
+margin: top right bottom left; (sentido horário: top-right-bottom-left.
+}
+
+border: 10px solid black;
+border-top: 20px solid blue +; (determina o tipo da borda para cada lado.)
+border-width: 30px 60px;
+
+[BOX MODEL]
+
+display: block; - o elemento será o único elemento da linha.
+writing-mode: vertical-lr; - inverte o modo de escrita para vertical.
+display: none; - remove completamente o elemento da tela. 
+display: inline-block; - o elemento é inline mas pode receber propriedades de elementos de bloco (ex.: padding, margin, border,etc)
+border-radius-topleft: 10px; (topright, topleft, bottomright, bottomleft)
+
+[GRID COLUMNS]
+
+GRID
+display: grid;
+fr - é uma unidade fracionaria que terá como objetivo distribuir o espaçamento restante entre os elementos do grid.
+gap - Cria uma distância entre os elementos do grid, tanto horizontal quanto vertical.
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; distribui e centraliza os elementos    no grid.
+  gap: 20px; define os espaços entre as linhas e colunas.
+}
+
+grid-template-columns: auto auto; ajusta o grid (div box)automaticamente de acordo com o conteúdo.
+
+place-items: start end; alinha o item de uma coluna/linha de grid ao inicio do bloco. (mais opções de alinhamento no CSS GRID LAYOUT ORIGAMID. OBS.: Pode combinar doi tipo de alinhamento, sendo um horizontal e o outro vertical.
+
+TROCAR ITEM DE UMA COLUNA PARA OUTRA
+
+Se o item tiver na coluna 1 e queremos mudar para a coluna 2:
+grid-column: 2;
+
+grid-template-columns: repeat(4, 1fr); irá criar 4 colunas idênticas.
+
+[GRID ROWS]
+
+grid-template-rows: repeat(4, 200px); irá criar 4 linhas de 200px.
+
+.item {
+    grid-row: 3; posiciona o item da classe para a linha 3.
+}
+
+.item {
+    grid-row: 3; 
+    grid-column: 2;
+} // o item da classe será posicionado na linha 3 coluna 2 do grid.
+
+OUTRA FORMA:
+
+.item {
+    grid-area: 3/2  // o item da classe será posicionado na linha 3 coluna 2 do grid. Funciona da mesma maneira.  
+}
+
+.item {
+    grid-auto-rows: 200px; // as linhas serão criadas sempre com 200px.
+}
+
+.item {
+    grid-template-rows: 300px auto.
+    grid-auto-rows: 200px; // as linhas serão criadas sempre com 200px.
+}
+// Nesse caso, as duas primeiras linhas serão criadas: a primeira com 300px, a segunda automática e as próximas com 200px.
+
+.item {
+    grid-template-rows: repeat(2, 1fr) // mesmo que: 1fr, 1fr
+}
+
+ALIGN-ITEMS - alinha na vertical (Y)
+JUSTIFY-ITEMS - alinha na horizontal (X)
+----------------------------------------------------------------------
+[IMG]
+
+sempre usar nas imagens:
+max-width: 100%; - ajusta a imagem no body da página.
+display: block;
+-----------------------------------------------------------------------
+[FLEXBOX]
+
+display: flex;
+flex-wrap: wrap; //quando a tela do browser é reduzida, os elementos flex-wrap vão sendo dispostos um abaixo do outro (responsivo).
+flex-basis: 200px; // determina o tamanho dos blocos.
+flex-shrink
+flex: 1;
+
+USO GERAL:
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  flex: 1;
+}
+-----------------------------------------------------------------------
+[POSITION]
+
+position: fixed; (top, right, left, bottom) //Posiciona o elemento de forma fixa no ponto desejado da tela.
+
+position: relative; (top, right, left, bottom) //Posiciona o elemento de forma FLUTUANTE no ponto desejado da tela.
+
+position: absolute; (top, right, left, bottom) //Posiciona o elemento FLUTUANTE com valores relativos ao body.
+Se o elemento posicionado for 'absolute' e a DIV que ele está inserido (objeto PAI) for 'relative'
+o posivionamento acontecerá em relação a DIV, o objeto pai. Ex,.:
+
+div {
+   border: 2px solid black;
+   background: grey;
+   position: relative
+}
+div.posic {
+   position: absolute;
+}
+
+Z-INDEX - eixo de profundidade
+
+z-index: -1; //joga o objeto para uma camada atrás dos demais.
+div.posic {
+   position: relative;
+   z-index: 1;
+}
+
+OVERFLOW: HIDDEN - powerclip
+
+
+mcrypt_encrypt
+openSSL
+hash
