@@ -1,0 +1,67 @@
+[GIT] Comandos
+
+markdownguide.org -> documentação markdown
+
+[Windows] Comandos Terminal
+echo hello > hello.txt (insere o texto 'hello' em um arquivo hello.txt)
+remover pasta com arquivos - rmdir (nome_da_pasta) /S /Q
+pwd - mostra do caminho da pasta atual no terminal.
+
+
+SHA1 - ENCRIPTAR ARQUIVO
+COMANDO: openssl sha1 <nome_do_arquivo>
+
+BLOBS
+TREE
+COMMIT
+
+CHAVE SSH
+TOKEN
+
+CHAVE SSH - Assinatura que permite acesso ao GitHub de forma segura, sem precisar de autenticação.
+
+[COMANDOS PARA GERAR CHAVE SSH:]
+ssh-keygen -t ed25519 -C jorgemacario@outlook.com (vai gerar um repositório no PC. A pasta será mostrada.)
+Acesse a pasta e digite: cat id_ed25519.pub (o git público).
+O Git irá gerar uma linha de comando que deverá ser copiada e colada no site do GitHub:
+Profile - settings - menu lateral>SSH and GPG Keys
+
+eval $(ssh-agent -s) 
+Passar a chave: ssh-add id_ed25519 (a chave aqui é a privada. Tem que ser executado o comando na pasta onde o arquivo está. Depois insere a senha cadastrada antes)
+
+git clone git@github.com:jorgemacario/jorgemacario.github.io.git (gera repositor no PC)
+------------------------------------------------------------------------------------------------------
+GIT INIT: Iniciar o git em um repositório.
+listar pastas ocultas: ls -a
+
+[CONFIGURANDO O COMMIT]
+
+É necessário configurar o commit antes para que, quando for acessá-lo, tenha login e senha.
+COMANDO> git config --global user.email "jorgemacario@outlook.com"
+COMANDO> git config --global user.name jorgemacario
+
+[REMOVENDO USUARIO]
+COMANDO> git config --global --unset user.email
+COMANDO> git config --global --unset user.name
+
+[ADICIONANDO O COMMIT]
+COMANDO> git add *  |  git add nome_do_aquivo  |  git add.
+COMANDO> git commit -m "MENSAGEM"
+
+MOSTRAR STATUS DOS ARQUIVOS DO REPOSITÓRIO
+COMANDO> git status
+
+[MOVER ARQUIVOS ENTRE PASTAS]
+COMANDO> mv <nome_do_arquivo> ./pasta/
+
+[ENVIANDO ARQUIVOS PARA REPOSITORIO NO GITHUB]
+COMANDO> git remote add origin https://github.com/jorgemacario/livro-receitas.git (link adquirido no repositório do GitHub) // Localiza o repositório.
+
+COMANDO> git push origin master // Empurrar arquivos para o repositório.
+COMANDO> git pull origin master // Puxa o conteúdo do repositório para poder juntar com a alteração feita.
+
+[COLNAR / COPIAR O CODIGO DO GITHUB PARA O PC]
+COMANDO> git clone <endereço_do_codigo>
+
+
+
