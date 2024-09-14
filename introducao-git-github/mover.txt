@@ -1,0 +1,2 @@
+Arquivo criado para teste.
+Mover para outra pasta.
